@@ -12,5 +12,12 @@ export default defineConfig({
   server: {
     port: 5173,
     open: true,
+    proxy: {
+      // 前端请求 /api/* 时转发到 NestJS 后端（默认 3000 端口）
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+      },
+    },
   },
 })
