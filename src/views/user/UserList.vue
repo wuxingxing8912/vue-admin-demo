@@ -15,7 +15,7 @@
       :columns="columns"
       :data-source="list"
       :loading="loading"
-      :pagination="{ pageSize: 5 }"
+      :pagination="{ pageSize: 10 }"
       row-key="id"
     >
       <template #bodyCell="{ column, record }">

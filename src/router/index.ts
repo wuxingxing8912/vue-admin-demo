@@ -17,6 +17,8 @@ const routes: RouteRecordRaw[] = [
       { path: 'home', name: 'Home', component: () => import('@/views/Home.vue') },
       { path: 'user/list', name: 'UserList', component: () => import('@/views/user/UserList.vue') },
       { path: 'system/log', name: 'LogManage', component: () => import('@/views/system/LogManage.vue') },
+      { path: 'device/list', name: 'DeviceList', component: () => import('@/views/device/DeviceList.vue') },
+      { path: 'system/role', name: 'RoleManage', component: () => import('@/views/system/RoleManage.vue') },
     ],
   },
   { path: '/:pathMatch(.*)*', redirect: '/home' },

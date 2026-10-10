@@ -9,12 +9,18 @@
         <a-menu-item key="/user/list">
           <router-link to="/user/list">用户管理</router-link>
         </a-menu-item>
+        <a-menu-item key="/device/list">
+          <router-link to="/device/list">设备管理</router-link>
+        </a-menu-item>
         <a-sub-menu key="system">
           <template #title>
             <span>系统管理</span>
           </template>
           <a-menu-item key="/system/log">
             <router-link to="/system/log">日志管理</router-link>
+          </a-menu-item>
+          <a-menu-item key="/system/role">
+            <router-link to="/system/role">角色管理</router-link>
           </a-menu-item>
         </a-sub-menu>
       </a-menu>

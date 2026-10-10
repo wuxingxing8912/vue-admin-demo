@@ -53,3 +53,32 @@ export const userApi = {
   //   return delay(true)
   // },
 }
+
+// ===== 设备管理 =====
+export interface DeviceItem {
+  id: number
+  name: string // 设备名称
+  sn: string // SN 序列号
+  model: string // 型号
+}
+
+export const deviceApi = {
+  list: (keyword = '') => request.get('/devices', { params: { keyword } }),
+  create: (payload: Omit<DeviceItem, 'id'>) => request.post('/devices', payload),
+  update: (id: number, patch: Partial<DeviceItem>) => request.put(`/devices/${id}`, patch),
+  remove: (id: number) => request.delete(`/devices/${id}`),
+}
+
+// ===== 角色管理 =====
+export interface RoleItem {
+  id: number
+  name: string // 角色名称
+  description: string // 描述/备注
+}
+
+export const roleApi = {
+  list: () => request.get('/roles'),
+  create: (payload: Omit<RoleItem, 'id'>) => request.post('/roles', payload),
+  update: (id: number, patch: Partial<RoleItem>) => request.put(`/roles/${id}`, patch),
+  remove: (id: number) => request.delete(`/roles/${id}`),
+}
